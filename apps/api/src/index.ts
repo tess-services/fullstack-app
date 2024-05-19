@@ -30,5 +30,5 @@ const server = createHTTPServer({
   router: appRouter,
 });
 
-server.listen(process.env.PORT || 3001);
-console.log("Server is running on ", process.env.PORT || 3001);
+server.listen(process.env.PORT ?? 3001);
+console.log("Server is running on ", process.env.PORT ?? 3001);
