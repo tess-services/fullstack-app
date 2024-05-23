@@ -1,7 +1,7 @@
 import { trpc } from "@/trpc";
 
 export const UserList = () => {
-  const users = trpc.userList.useQuery();
+  const users = trpc.user.list.useQuery();
 
   return (
     <section className="container mx-auto my-16">
