@@ -29,6 +29,10 @@ export const LoginPage = ({
     if (data.success) {
       const { id, name, email } = data.user;
       window.sessionStorage.setItem("token", data.token);
+      window.sessionStorage.setItem(
+        "user",
+        JSON.stringify({ id, name, email })
+      );
       onLogin({ id, name, email });
       return;
     }

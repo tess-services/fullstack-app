@@ -28,9 +28,13 @@ const trpcClient = trpc.createClient({
   ],
 });
 const queryClient = new QueryClient();
-
+const user = sessionStorage.getItem("user");
+let userInfo: CurrentUser | null = null;
+if (user) {
+  userInfo = JSON.parse(user) as CurrentUser;
+}
 function App({ signup }: { signup: boolean }) {
-  const [currentUser, setCurrentUser] = useState<CurrentUser | null>(null);
+  const [currentUser, setCurrentUser] = useState<CurrentUser | null>(userInfo);
 
   const handleUserLoginSuccessfully = (user: CurrentUser) => {
     setCurrentUser(user);
