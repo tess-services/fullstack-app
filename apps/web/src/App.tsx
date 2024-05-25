@@ -27,13 +27,17 @@ const trpcClient = trpc.createClient({
     }),
   ],
 });
+
 const queryClient = new QueryClient();
 const user = sessionStorage.getItem("user");
+
 let userInfo: CurrentUser | null = null;
+
 if (user) {
   userInfo = JSON.parse(user) as CurrentUser;
 }
-function App({ signup }: { signup: boolean }) {
+
+function App({ signup }: Readonly<{ signup: boolean }>) {
   const [currentUser, setCurrentUser] = useState<CurrentUser | null>(userInfo);
 
   const handleUserLoginSuccessfully = (user: CurrentUser) => {
@@ -60,7 +64,7 @@ function App({ signup }: { signup: boolean }) {
     <trpc.Provider client={trpcClient} queryClient={queryClient}>
       <AuthContext.Provider value={currentUser}>
         <QueryClientProvider client={queryClient}>
-          <section className="container mx-auto my-16">
+          <section className="my-32 flex item-center justify-center">
             {getChildComponent()}
             <div id="detail">
               <Outlet />

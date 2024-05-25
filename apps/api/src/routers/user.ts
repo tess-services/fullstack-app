@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
 import { z } from "zod";
-import { userInputSchema } from "../../types";
+import { loginInputSchema, userInputSchema } from "../../types";
 import { db } from "../db";
 import { generateToken } from "../jwtUtils";
 import { protectedProcedure, publicProcedure, router } from "../trpc";
@@ -25,12 +25,7 @@ export const userRouter = router({
     return user;
   }),
   validateLogin: publicProcedure
-    .input(
-      z.object({
-        email: z.string(),
-        password: z.string(),
-      })
-    )
+    .input(loginInputSchema)
     .output(userLoginResponse)
     .mutation(async (opts) => {
       const { input } = opts;
