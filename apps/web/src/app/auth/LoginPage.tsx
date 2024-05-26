@@ -74,7 +74,7 @@ export const LoginPage = () => {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel>Email Id</FormLabel>
                     <FormControl>
                       <Input placeholder="abc@xyz.com" {...field} />
                     </FormControl>
@@ -105,7 +105,13 @@ export const LoginPage = () => {
               />
             </CardContent>
             <CardFooter className="flex justify-between">
-              <Button variant="outline" type="reset">
+              <Button
+                onClick={() => {
+                  navigate("/signup");
+                }}
+                variant="outline"
+                type="reset"
+              >
                 Sign up
               </Button>
               <Button type="submit">Login</Button>
