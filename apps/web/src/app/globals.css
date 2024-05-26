@@ -81,3 +81,12 @@ h1 {
   font-weight: bold;
   margin-bottom: 1rem;
 }
+
+ 
+ 
+a.active {
+  text-decoration: underline;
+  text-underline-offset: 0.5em;
+}
+ 
+ 
