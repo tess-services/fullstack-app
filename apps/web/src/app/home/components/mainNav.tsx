@@ -12,19 +12,19 @@ export function MainNav({
       {...props}
     >
       <NavLink
-        to="home/overview"
+        to="overview"
         className="text-sm font-medium transition-colors hover:text-primary"
       >
         Overview
       </NavLink>
       <NavLink
-        to="home/customers"
+        to="customers"
         className="text-sm font-medium transition-colors hover:text-primary"
       >
         Customers
       </NavLink>
       <NavLink
-        to="home/projects"
+        to="projects"
         className="text-sm font-medium transition-colors hover:text-primary"
       >
         Projects
