@@ -88,7 +88,7 @@ export const Signup: React.FC = () => {
                   <FormItem>
                     <FormLabel>Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="John Smith" {...field} />
+                      <Input placeholder="John Smith" {...field} required />
                     </FormControl>
                     <FormDescription>
                       The way you want us to call you.
